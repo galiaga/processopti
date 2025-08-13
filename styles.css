@@ -42,3 +42,146 @@ body{
   .hero{grid-template-columns:1fr}
   .card-grid{grid-template-columns:1fr}
 }
+
+/* ===== Legibilidad base ===== */
+:root{
+  --bg-1:#0f1423;            /* fondo principal */
+  --text-1:#E5E7EB;          /* texto principal (alto contraste) */
+  --text-2:#A5B4FC;          /* acento suave */
+  --muted:#A7AAB5;
+  --card:#151b2d;
+  --border:rgba(148,163,184,.15);
+}
+
+body{
+  color:var(--text-1);
+  background:linear-gradient(180deg,#0e1023 0%, #0b1224 100%);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+p{ line-height:1.65; }
+
+/* Títulos fluidos con clamp para no “romper” en móvil */
+h1{
+  font-weight:800;
+  line-height:1.12;
+  /* entre 32px y 56px, según ancho */
+  font-size:clamp(32px, 6vw, 56px);
+  letter-spacing:-0.02em;
+  margin: 12px 0 16px;
+}
+h2{
+  font-weight:800;
+  font-size:clamp(22px, 3.6vw, 32px);
+  letter-spacing:-0.01em;
+}
+
+/* ===== NAV y marca ===== */
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px 0;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+  /* que el bloque de marca pueda crecer */
+  flex:1 1 auto;
+}
+
+.brand img{
+  width:40px;
+  height:40px;
+  display:block;
+}
+
+.brand-title{
+  font-weight:800;
+  letter-spacing:-0.02em;
+  /* tamaño fluido */
+  font-size:clamp(22px, 5.6vw, 30px);
+}
+
+/* Las “kpis/badges” a la derecha en desktop */
+.kpis{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===== Hero ===== */
+.hero{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:28px;
+  align-items:center;
+  margin:12px 0 24px;
+}
+
+.hero p{
+  color:var(--text-1);
+  opacity:.9;
+}
+
+/* ===== Cards ===== */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+
+/* ===== Mobile (<= 640px) ===== */
+@media (max-width: 640px){
+  /* Marca a toda anchura en móvil */
+  .nav{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .brand{
+    width:100%;
+    justify-content:flex-start; /* logo + texto pegados al inicio */
+    padding:4px 0;
+  }
+  .brand img{
+    width:44px;
+    height:44px;
+  }
+  .brand-title{
+    font-size:clamp(24px, 8vw, 32px); /* sube el tamaño en móvil */
+  }
+
+  /* Badges debajo o apiladas */
+  .kpis{
+    width:100%;
+    gap:8px;
+  }
+
+  /* Hero en una columna y más respiración */
+  .hero{
+    grid-template-columns: 1fr;
+    gap:16px;
+    margin-top:8px;
+  }
+
+  /* Botones: full width y legibles */
+  .cta{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .button,
+  .button.secondary{
+    width:100%;
+    text-align:center;
+    padding:14px 16px;
+    font-weight:700;
+  }
+}
