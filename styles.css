@@ -1,0 +1,44 @@
+
+:root{
+  --bg:#0F172A; /* slate-900 */
+  --fg:#E2E8F0; /* slate-200 */
+  --muted:#94A3B8; /* slate-400 */
+  --ink:#111827; /* gray-900 */
+  --brand:#7C3AED; /* violet-600 */
+  --brand-2:#C084FC; /* fuchsia-300 */
+  --card:#111827; /* gray-900 */
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial, 'Apple Color Emoji','Segoe UI Emoji';
+  background: radial-gradient(1000px 600px at 80% -10%, rgba(124,58,237,.25), transparent), var(--bg);
+  color: var(--fg);
+  line-height:1.6;
+}
+.container{max-width:1120px;margin:0 auto;padding:24px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--fg)}
+.brand img{width:40px;height:40px}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(124,58,237,.15);color:#E9D5FF;font-weight:600;font-size:12px;letter-spacing:.4px;border:1px solid rgba(192,132,252,.25)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+.hero h1{font-size:44px;line-height:1.15;margin:0 0 12px;font-weight:800}
+.hero p{font-size:18px;color:var(--muted);margin:6px 0 20px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.button{
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:white;border:0;border-radius:14px;padding:12px 18px;font-weight:700;font-size:16px;
+  text-decoration:none;box-shadow:0 10px 24px rgba(124,58,237,.25);
+}
+.button.secondary{background:transparent;border:1px solid rgba(148,163,184,.35);color:var(--fg)}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:24px 0}
+.card{background:rgba(255,255,255,.02);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:18px}
+.card h3{margin:0 0 6px}
+.kpis{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+.kpi{background:rgba(124,58,237,.15);color:#E9D5FF;border:1px solid rgba(192,132,252,.25);padding:8px 10px;border-radius:10px;font-weight:600;font-size:13px}
+.section{padding:28px 0}
+.footer{color:var(--muted);padding:40px 0;border-top:1px solid rgba(148,163,184,.15);margin-top:40px;font-size:14px}
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+}
