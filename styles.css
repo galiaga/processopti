@@ -1,72 +1,65 @@
+/* ===========================
+   ProcessOpti — styles.css
+   Enfoque: legibilidad, foco en problema/beneficio, ES/EN switch
+   =========================== */
 
+/* --------- Design tokens --------- */
 :root{
-  --bg:#0F172A; /* slate-900 */
-  --fg:#E2E8F0; /* slate-200 */
-  --muted:#94A3B8; /* slate-400 */
-  --ink:#111827; /* gray-900 */
-  --brand:#7C3AED; /* violet-600 */
-  --brand-2:#C084FC; /* fuchsia-300 */
-  --card:#111827; /* gray-900 */
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial, 'Apple Color Emoji','Segoe UI Emoji';
-  background: radial-gradient(1000px 600px at 80% -10%, rgba(124,58,237,.25), transparent), var(--bg);
-  color: var(--fg);
-  line-height:1.6;
-}
-.container{max-width:1120px;margin:0 auto;padding:24px}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--fg)}
-.brand img{width:40px;height:40px}
-.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(124,58,237,.15);color:#E9D5FF;font-weight:600;font-size:12px;letter-spacing:.4px;border:1px solid rgba(192,132,252,.25)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
-.hero h1{font-size:44px;line-height:1.15;margin:0 0 12px;font-weight:800}
-.hero p{font-size:18px;color:var(--muted);margin:6px 0 20px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.button{
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color:white;border:0;border-radius:14px;padding:12px 18px;font-weight:700;font-size:16px;
-  text-decoration:none;box-shadow:0 10px 24px rgba(124,58,237,.25);
-}
-.button.secondary{background:transparent;border:1px solid rgba(148,163,184,.35);color:var(--fg)}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:24px 0}
-.card{background:rgba(255,255,255,.02);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:18px}
-.card h3{margin:0 0 6px}
-.kpis{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
-.kpi{background:rgba(124,58,237,.15);color:#E9D5FF;border:1px solid rgba(192,132,252,.25);padding:8px 10px;border-radius:10px;font-weight:600;font-size:13px}
-.section{padding:28px 0}
-.footer{color:var(--muted);padding:40px 0;border-top:1px solid rgba(148,163,184,.15);margin-top:40px;font-size:14px}
-@media (max-width:980px){
-  .hero{grid-template-columns:1fr}
-  .card-grid{grid-template-columns:1fr}
-}
-
-/* ===== Legibilidad base ===== */
-:root{
-  --bg-1:#0f1423;            /* fondo principal */
-  --text-1:#E5E7EB;          /* texto principal (alto contraste) */
-  --text-2:#A5B4FC;          /* acento suave */
-  --muted:#A7AAB5;
-  --card:#151b2d;
+  /* Base */
+  --bg:#0e1023;
+  --bg-2:#0b1224;
+  --text:#E5E7EB;          /* alto contraste */
+  --muted:#94A3B8;         /* texto secundario */
   --border:rgba(148,163,184,.15);
+  --card:#151b2d;
+
+  /* Brand */
+  --brand:#7C3AED;         /* violet-600 */
+  --brand-2:#C084FC;       /* fuchsia-300 */
+
+  /* Effects */
+  --ring:rgba(124,58,237,.45);
+  --shadow:0 10px 24px rgba(124,58,237,.22);
 }
 
+/* --------- Reset mínimo --------- */
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+img { max-width:100%; display:block; }
+a { color:inherit; }
+
+/* --------- Base --------- */
 body{
-  color:var(--text-1);
-  background:linear-gradient(180deg,#0e1023 0%, #0b1224 100%);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:
+    radial-gradient(1000px 600px at 80% -10%, rgba(124,58,237,.22), transparent),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  line-height:1.65;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
 
-p{ line-height:1.65; }
+.container{ max-width:1120px; margin:0 auto; padding:24px; }
 
-/* Títulos fluidos con clamp para no “romper” en móvil */
+/* --------- Utilidades --------- */
+.muted{ color:var(--muted); }
+.subtle{ color:#A7AAB5; font-size:.95rem; }
+.kpis{ display:flex; gap:10px; flex-wrap:wrap; }
+.kpi{
+  background:rgba(124,58,237,.15);
+  color:#E9D5FF;
+  border:1px solid rgba(192,132,252,.25);
+  padding:8px 10px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:13px;
+}
+
+/* --------- Tipografía responsiva --------- */
 h1{
   font-weight:800;
   line-height:1.12;
-  /* entre 32px y 56px, según ancho */
   font-size:clamp(32px, 6vw, 56px);
   letter-spacing:-0.02em;
   margin: 12px 0 16px;
@@ -75,9 +68,11 @@ h2{
   font-weight:800;
   font-size:clamp(22px, 3.6vw, 32px);
   letter-spacing:-0.01em;
+  margin: 0 0 8px;
 }
+p{ margin:6px 0 20px; }
 
-/* ===== NAV y marca ===== */
+/* --------- NAV --------- */
 .nav{
   display:flex;
   align-items:center;
@@ -92,31 +87,35 @@ h2{
   gap:12px;
   text-decoration:none;
   color:inherit;
-  /* que el bloque de marca pueda crecer */
   flex:1 1 auto;
 }
-
-.brand img{
-  width:40px;
-  height:40px;
-  display:block;
-}
-
+.brand img{ width:40px; height:40px; }
 .brand-title{
   font-weight:800;
   letter-spacing:-0.02em;
-  /* tamaño fluido */
   font-size:clamp(22px, 5.6vw, 30px);
 }
 
-/* Las “kpis/badges” a la derecha en desktop */
-.kpis{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+/* Idioma (ES/EN) */
+.lang-switch{ display:flex; gap:8px; align-items:center; }
+.lang-switch button{
+  border:1px solid rgba(148,163,184,.3);
+  background:transparent;
+  color:var(--text);
+  padding:6px 10px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  transition:border-color .18s ease, box-shadow .18s ease, transform .06s ease;
 }
+.lang-switch button:hover{ border-color:var(--brand); }
+.lang-switch button.active{
+  border-color:var(--brand);
+  box-shadow:0 0 0 2px rgba(124,58,237,.12) inset;
+}
+.lang-switch button:active{ transform:translateY(1px); }
 
-/* ===== Hero ===== */
+/* --------- Hero --------- */
 .hero{
   display:grid;
   grid-template-columns: 1.2fr 1fr;
@@ -124,64 +123,98 @@ h2{
   align-items:center;
   margin:12px 0 24px;
 }
+.hero p{ color:var(--text); opacity:.95; }
 
-.hero p{
-  color:var(--text-1);
-  opacity:.9;
+/* --------- Botones --------- */
+.cta{ display:flex; gap:12px; flex-wrap:wrap; }
+
+.button{
+  display:inline-block;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:white;
+  border:0;
+  border-radius:14px;
+  padding:12px 18px;
+  font-weight:800;
+  font-size:16px;
+  text-decoration:none;
+  box-shadow:var(--shadow);
+  transition: transform .06s ease, filter .18s ease, box-shadow .18s ease;
+}
+.button:hover{ filter:saturate(1.05) brightness(1.02); box-shadow:0 12px 28px rgba(124,58,237,.28); }
+.button:active{ transform:translateY(1px); }
+.button.secondary{
+  background:transparent;
+  border:1px solid rgba(148,163,184,.35);
+  color:var(--text);
+  box-shadow:none;
 }
 
-/* ===== Cards ===== */
+/* Accesibilidad foco */
+.button:focus-visible,
+.lang-switch button:focus-visible,
+a:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 3px var(--ring);
+  border-color:var(--brand);
+}
+
+/* --------- Secciones y tarjetas --------- */
+.section{ padding:28px 0; }
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin:24px 0;
+}
 .card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:16px;
+  padding:18px;
+  transition:transform .12s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.card h3{ margin:0 0 6px; }
+.card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(192,132,252,.35);
+  box-shadow:0 10px 30px rgba(124,58,237,.08);
 }
 
-/* ===== Mobile (<= 640px) ===== */
+/* --------- Footer --------- */
+.footer{
+  color:var(--muted);
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  margin-top:40px;
+  font-size:14px;
+}
+
+/* --------- Responsive --------- */
+@media (max-width:980px){
+  .hero{ grid-template-columns:1fr; }
+  .card-grid{ grid-template-columns:1fr; }
+}
+
 @media (max-width: 640px){
-  /* Marca a toda anchura en móvil */
+  /* NAV en columna */
   .nav{
     flex-direction:column;
     align-items:flex-start;
     gap:10px;
   }
-  .brand{
-    width:100%;
-    justify-content:flex-start; /* logo + texto pegados al inicio */
-    padding:4px 0;
-  }
-  .brand img{
-    width:44px;
-    height:44px;
-  }
-  .brand-title{
-    font-size:clamp(24px, 8vw, 32px); /* sube el tamaño en móvil */
-  }
+  .brand img{ width:44px; height:44px; }
+  .brand-title{ font-size:clamp(24px, 8vw, 32px); }
 
-  /* Badges debajo o apiladas */
-  .kpis{
-    width:100%;
-    gap:8px;
-  }
+  /* Hero: más aire */
+  .hero{ gap:16px; margin-top:8px; }
 
-  /* Hero en una columna y más respiración */
-  .hero{
-    grid-template-columns: 1fr;
-    gap:16px;
-    margin-top:8px;
-  }
-
-  /* Botones: full width y legibles */
-  .cta{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-  .button,
-  .button.secondary{
+  /* CTA: ancho completo */
+  .cta{ flex-direction:column; gap:10px; }
+  .button, .button.secondary{
     width:100%;
     text-align:center;
     padding:14px 16px;
-    font-weight:700;
   }
 }

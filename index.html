@@ -3,13 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ProcessOpti — Turning Truth into Valuable Outcomes</title>
-  <meta name="description" content="ProcessOpti valida la integridad de tus datos y KPIs operacionales para que tus decisiones sean realmente data-driven, evitando inversiones y proyectos fallidos.">
-  <meta property="og:title" content="ProcessOpti — Turning Truth into Valuable Outcomes">
-  <meta property="og:description" content="El filtro honesto y técnico que garantiza que cada número usado en decisiones críticas refleje la realidad.">
+  <title data-i18n="meta_title">ProcessOpti — Turning Truth into Valuable Outcomes</title>
+  <meta name="description" data-i18n="meta_description" content="ProcessOpti valida la integridad de tus datos y KPIs operacionales para que tus decisiones sean realmente data-driven, evitando inversiones y proyectos fallidos.">
+  <meta property="og:title" data-i18n="og_title" content="ProcessOpti — Turning Truth into Valuable Outcomes">
+  <meta property="og:description" data-i18n="og_description" content="El sello de confianza para tus KPIs: garantiza que cada número usado en decisiones críticas refleje la realidad.">
   <meta property="og:image" content="/assets/og-image.png">
   <link rel="icon" href="/assets/icon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* pequeños ajustes para el switcher */
+    .lang-switch { display:flex; gap:8px; align-items:center; }
+    .lang-switch button {
+      border:1px solid rgba(148,163,184,.3);
+      background:transparent; padding:6px 10px; border-radius:10px;
+      font-weight:600; cursor:pointer;
+    }
+    .lang-switch button.active { border-color:#7C3AED; box-shadow:0 0 0 2px rgba(124,58,237,.12) inset; }
+    .subtle { color:#94a3b8; font-size:.95rem; }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -17,35 +28,38 @@
     <!-- NAV -->
     <nav class="nav" aria-label="Principal">
       <a class="brand" href="#">
-        <img src="/assets/icon.png" alt="Logo de ProcessOpti">
+        <img src="/assets/icon.png" alt="Logo de ProcessOpti" data-i18n-attr="alt:brand_alt">
         <span class="brand-title">ProcessOpti</span>
       </a>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="subtle" data-i18n="lang_label">Idioma</span>
+        <button id="btn-es" aria-label="Cambiar a Español">ES</button>
+        <button id="btn-en" aria-label="Switch to English">EN</button>
+      </div>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
       <div>
-        <h1>
-          Turning Truth into
-          <span style="background:linear-gradient(135deg,#7C3AED,#C084FC);-webkit-background-clip:text;background-clip:text;color:transparent">
-            Valuable Outcomes
-          </span>
+        <p class="subtle" style="margin:0 0 4px" data-i18n="tagline">Turning Truth into Valuable Outcomes</p>
+        <h1 data-i18n="hero_title">
+          ¿Tus KPIs son confiables o solo parecen correctos?
         </h1>
-        <p style="font-weight:600;margin-top:6px">
-          El filtro honesto y técnico que valida la integridad de tus datos y KPIs para que tus decisiones sean <strong>realmente data-driven</strong> — no data-deceived.
+        <p style="font-weight:600;margin-top:6px" data-i18n="hero_subtitle">
+          ProcessOpti detecta datos incompletos o distorsionados que pueden costarte millones.
         </p>
-        <p>
-          En muchos procesos industriales, los KPIs y dashboards parecen correctos, pero se basan en datos incompletos o distorsionados. Llevando a decisiones equivocadas, millones perdidos y proyectos que fracasan.<br>
-          En solo <strong>24–72h</strong>, ProcessOpti audita tus <strong>fuentes de datos</strong>, <strong>red IoT</strong> y <strong>KPIs críticos</strong>, mostrando qué puedes confiar, qué debes corregir y el costo de no hacerlo.
+        <p data-i18n="hero_body">
+          Siempre sabrás qué KPIs puedes confiar, cuáles debes corregir y el impacto real de no hacerlo. Validamos
+          <strong>fuentes de datos</strong>, <strong>red IoT</strong> y <strong>KPIs críticos</strong> para que tus decisiones sean realmente data‑driven — no data‑deceived.
         </p>
         <div class="cta" style="margin-top:18px">
-          <a class="button" href="mailto:hello@processopti.co?subject=Diagn%C3%B3stico%20ProcessOpti">Solicitar diagnóstico</a>
-          <a class="button secondary" href="#metodologia">Ver metodología</a>
+          <a class="button" data-i18n-attr="href:cta_primary_href" data-i18n="cta_primary">Quiero validar mis KPIs</a>
+          <a class="button secondary" href="#metodologia" data-i18n="cta_secondary">Ver metodología</a>
         </div>
         <div class="kpis" style="margin-top:12px">
-          <span class="kpi">Diagnóstico 24–72h</span>
-          <span class="kpi">Checklist técnico + ejecutivo</span>
-          <span class="kpi">Confidence Score por KPI</span>
+          <span class="kpi" data-i18n="kpi_1">Diagnóstico en 24–72h</span>
+          <span class="kpi" data-i18n="kpi_2">Checklist técnico + ejecutivo</span>
+          <span class="kpi" data-i18n="kpi_3">Confidence Score por KPI</span>
         </div>
       </div>
       <div aria-hidden="true">
@@ -55,66 +69,216 @@
 
     <!-- RESULTADOS -->
     <section class="section" aria-labelledby="resultados">
-      <h2 id="resultados" style="margin:0 0 8px">Resultados que generan confianza</h2>
-      <p class="muted">Evidencia clara y verificable antes de actuar.</p>
+      <h2 id="resultados" style="margin:0 0 8px" data-i18n="results_title">Resultados que generan confianza</h2>
+      <p class="muted" data-i18n="results_caption">Evidencia clara y verificable antes de actuar.</p>
       <div class="card-grid">
-        <div class="card"><h3>↓ 70% tiempo de validación</h3><p>Menos fricción para iniciar o aprobar proyectos.</p></div>
-        <div class="card"><h3>Brechas críticas detectadas</h3><p>Lista priorizada con evidencia replicable por tu equipo.</p></div>
-        <div class="card"><h3>ROI protegido</h3><p>Decisiones respaldadas por datos íntegros y trazables.</p></div>
+        <div class="card">
+          <h3 data-i18n="res_1_title">Tiempo de validación 70% menor</h3>
+          <p data-i18n="res_1_body">Tu equipo se enfoca en producir valor, no en auditar datos.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="res_2_title">Brechas críticas identificadas al detalle</h3>
+          <p data-i18n="res_2_body">Evidencia replicable que tu equipo puede verificar.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="res_3_title">ROI asegurado antes de invertir</h3>
+          <p data-i18n="res_3_body">Decisiones basadas en datos íntegros, no supuestos.</p>
+        </div>
       </div>
       <div class="cta" style="margin-top:16px">
-        <a class="button" href="mailto:hello@processopti.co?subject=Diagn%C3%B3stico%20ProcessOpti">Quiero mi diagnóstico</a>
+        <a class="button" data-i18n-attr="href:cta_primary_href" data-i18n="cta_primary">Quiero validar mis KPIs</a>
       </div>
     </section>
 
     <!-- METODOLOGÍA -->
     <section id="metodologia" class="section" aria-labelledby="como-funciona">
-      <h2 id="como-funciona" style="margin:0 0 8px">Metodología en 3 pasos</h2>
-      <p class="muted">Proceso rápido, claro y verificable.</p>
+      <h2 id="como-funciona" style="margin:0 0 8px" data-i18n="method_title">Metodología en 3 pasos</h2>
+      <p class="muted" data-i18n="method_caption">Proceso rápido, claro y verificable.</p>
 
       <div class="card-grid">
         <article class="card">
-          <h3>1) Conectar &amp; Auditar</h3>
-          <p>Revisión de calidad de datos (completitud, consistencia, latencia), topología IoT y cálculo de KPIs clave.</p>
+          <h3 data-i18n="step_1_title">1) Conectar &amp; Auditar</h3>
+          <p data-i18n="step_1_body">Sin integraciones pesadas, revisamos calidad de datos (completitud, consistencia, latencia), topología IoT y KPIs clave.</p>
         </article>
         <article class="card">
-          <h3>2) Diagnóstico de confianza</h3>
-          <p>Confidence Score por KPI, con criterios y evidencia para validarlo internamente.</p>
+          <h3 data-i18n="step_2_title">2) Diagnóstico de confianza</h3>
+          <p data-i18n="step_2_body">Cada KPI obtiene un <em>Confidence Score</em> con criterios y evidencia verificable internamente.</p>
         </article>
         <article class="card">
-          <h3>3) Roadmap de acción</h3>
-          <p>Brechas priorizadas, quick wins y plan para mantener la integridad de datos en el tiempo.</p>
+          <h3 data-i18n="step_3_title">3) Acción inmediata</h3>
+          <p data-i18n="step_3_body">Roadmap claro con quick wins y brechas priorizadas para no perder tiempo ni dinero.</p>
         </article>
       </div>
 
       <div class="cta" style="margin-top:16px">
-        <a class="button secondary" href="mailto:hello@processopti.co?subject=Plantilla%20de%20Readiness">Solicitar checklist de validación</a>
+        <a class="button secondary" data-i18n-attr="href:cta_checklist_href" data-i18n="cta_checklist">Solicitar checklist de validación</a>
       </div>
     </section>
 
     <!-- POR QUÉ PROCESSOPTI -->
     <section class="section" aria-labelledby="porque">
-      <h2 id="porque" style="margin:0 0 8px">Por qué ProcessOpti</h2>
-      <p class="muted">No vendemos optimización si los datos no son confiables. Primero aseguramos la verdad, luego el valor.</p>
+      <h2 id="porque" style="margin:0 0 8px" data-i18n="why_title">Por qué ProcessOpti</h2>
+      <p class="muted" data-i18n="why_caption">Primero aseguramos la verdad, luego el valor.</p>
 
       <div class="card-grid">
-        <div class="card"><h3>Transparencia total</h3><p>Informes claros y auditables para técnicos y ejecutivos.</p></div>
-        <div class="card"><h3>Plug-and-play</h3><p>Implementación en horas, resultados en días.</p></div>
-        <div class="card"><h3>Especialización industrial</h3><p>Diseñado para datos de procesos complejos como minería y energía.</p></div>
+        <div class="card">
+          <h3 data-i18n="why_1_title">Sello de confianza para tus KPIs</h3>
+          <p data-i18n="why_1_body">Tus decisiones se basan en números validados.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="why_2_title">Plug‑and‑play real</h3>
+          <p data-i18n="why_2_body">Diagnóstico en horas, resultados en días.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="why_3_title">Diseñado para procesos críticos</h3>
+          <p data-i18n="why_3_body">Minería, energía e industrias donde cada error cuesta millones.</p>
+        </div>
       </div>
 
       <div class="cta" style="margin-top:16px">
-        <a class="button" href="mailto:hello@processopti.co?subject=Diagn%C3%B3stico%20ProcessOpti">Solicitar diagnóstico</a>
+        <a class="button" data-i18n-attr="href:cta_primary_href" data-i18n="cta_primary">Quiero validar mis KPIs</a>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div>© <span id="year"></span> ProcessOpti · <a href="mailto:hello@processopti.co" style="color:#E9D5FF">hello@processopti.co</a></div>
+      <div>
+        © <span id="year"></span> ProcessOpti ·
+        <a href="mailto:hello@processopti.co" style="color:#E9D5FF">hello@processopti.co</a>
+      </div>
     </footer>
   </div>
 
   <script>
+    // Text resources
+    const i18n = {
+      es: {
+        meta_title: "ProcessOpti — Turning Truth into Valuable Outcomes",
+        meta_description: "ProcessOpti valida la integridad de tus datos y KPIs operacionales para que tus decisiones sean realmente data-driven, evitando inversiones y proyectos fallidos.",
+        og_title: "ProcessOpti — Turning Truth into Valuable Outcomes",
+        og_description: "El sello de confianza para tus KPIs: garantiza que cada número usado en decisiones críticas refleje la realidad.",
+        brand_alt: "Logo de ProcessOpti",
+        lang_label: "Idioma",
+        tagline: "Turning Truth into Valuable Outcomes",
+        hero_title: "¿Tus KPIs son confiables o solo parecen correctos?",
+        hero_subtitle: "ProcessOpti detecta datos incompletos o distorsionados que pueden costarte millones.",
+        hero_body: "Siempre sabrás qué KPIs puedes confiar, cuáles debes corregir y el impacto real de no hacerlo. Validamos <strong>fuentes de datos</strong>, <strong>red IoT</strong> y <strong>KPIs críticos</strong> para que tus decisiones sean realmente data‑driven — no data‑deceived.",
+        cta_primary: "Quiero validar mis KPIs",
+        cta_secondary: "Ver metodología",
+        cta_primary_href: "mailto:hello@processopti.co?subject=Quiero%20validar%20mis%20KPIs",
+        kpi_1: "Diagnóstico en 24–72h",
+        kpi_2: "Checklist técnico + ejecutivo",
+        kpi_3: "Confidence Score por KPI",
+        results_title: "Resultados que generan confianza",
+        results_caption: "Evidencia clara y verificable antes de actuar.",
+        res_1_title: "Tiempo de validación 70% menor",
+        res_1_body: "Tu equipo se enfoca en producir valor, no en auditar datos.",
+        res_2_title: "Brechas críticas identificadas al detalle",
+        res_2_body: "Evidencia replicable que tu equipo puede verificar.",
+        res_3_title: "ROI asegurado antes de invertir",
+        res_3_body: "Decisiones basadas en datos íntegros, no supuestos.",
+        method_title: "Metodología en 3 pasos",
+        method_caption: "Proceso rápido, claro y verificable.",
+        step_1_title: "1) Conectar & Auditar",
+        step_1_body: "Sin integraciones pesadas, revisamos calidad de datos (completitud, consistencia, latencia), topología IoT y KPIs clave.",
+        step_2_title: "2) Diagnóstico de confianza",
+        step_2_body: "Cada KPI obtiene un <em>Confidence Score</em> con criterios y evidencia verificable internamente.",
+        step_3_title: "3) Acción inmediata",
+        step_3_body: "Roadmap claro con quick wins y brechas priorizadas para no perder tiempo ni dinero.",
+        cta_checklist: "Solicitar checklist de validación",
+        cta_checklist_href: "mailto:hello@processopti.co?subject=Solicitar%20checklist%20de%20validaci%C3%B3n",
+        why_title: "Por qué ProcessOpti",
+        why_caption: "Primero aseguramos la verdad, luego el valor.",
+        why_1_title: "Sello de confianza para tus KPIs",
+        why_1_body: "Tus decisiones se basan en números validados.",
+        why_2_title: "Plug‑and‑play real",
+        why_2_body: "Diagnóstico en horas, resultados en días.",
+        why_3_title: "Diseñado para procesos críticos",
+        why_3_body: "Minería, energía e industrias donde cada error cuesta millones."
+      },
+      en: {
+        meta_title: "ProcessOpti — Turning Truth into Valuable Outcomes",
+        meta_description: "ProcessOpti validates the integrity of your operational data and KPIs so decisions are truly data‑driven, avoiding failed projects and wasted spend.",
+        og_title: "ProcessOpti — Turning Truth into Valuable Outcomes",
+        og_description: "The trust seal for your KPIs: ensure every number used in critical decisions reflects reality.",
+        brand_alt: "ProcessOpti logo",
+        lang_label: "Language",
+        tagline: "Turning Truth into Valuable Outcomes",
+        hero_title: "Are your KPIs trustworthy—or just look right?",
+        hero_subtitle: "ProcessOpti uncovers incomplete or distorted data that can cost you millions.",
+        hero_body: "You’ll always know which KPIs to trust, which to fix, and the real impact of not acting. We validate your <strong>data sources</strong>, <strong>IoT network</strong>, and <strong>critical KPIs</strong> so decisions are truly data‑driven—not data‑deceived.",
+        cta_primary: "Validate my KPIs",
+        cta_secondary: "See methodology",
+        cta_primary_href: "mailto:hello@processopti.co?subject=Validate%20my%20KPIs",
+        kpi_1: "Assessment in 24–72h",
+        kpi_2: "Technical + executive checklist",
+        kpi_3: "Confidence Score per KPI",
+        results_title: "Outcomes that build trust",
+        results_caption: "Clear, verifiable evidence before you act.",
+        res_1_title: "70% faster validation time",
+        res_1_body: "Free your team to create value—not audit data.",
+        res_2_title: "Critical gaps identified in detail",
+        res_2_body: "Replicable evidence your team can verify.",
+        res_3_title: "ROI protected before investing",
+        res_3_body: "Decisions based on integral, traceable data—not assumptions.",
+        method_title: "3‑step methodology",
+        method_caption: "Fast, clear, and verifiable.",
+        step_1_title: "1) Connect & Audit",
+        step_1_body: "No heavy integrations: we review data quality (completeness, consistency, latency), IoT topology, and key KPIs.",
+        step_2_title: "2) Trust diagnosis",
+        step_2_body: "Each KPI gets a <em>Confidence Score</em> with criteria and evidence you can validate internally.",
+        step_3_title: "3) Immediate action",
+        step_3_body: "Clear roadmap with quick wins and prioritized gaps so you don’t waste time or money.",
+        cta_checklist: "Request validation checklist",
+        cta_checklist_href: "mailto:hello@processopti.co?subject=Request%20validation%20checklist",
+        why_title: "Why ProcessOpti",
+        why_caption: "Secure the truth first, then the value.",
+        why_1_title: "Trust seal for your KPIs",
+        why_1_body: "Decisions based on validated numbers.",
+        why_2_title: "True plug‑and‑play",
+        why_2_body: "Assessment in hours, results in days.",
+        why_3_title: "Built for critical processes",
+        why_3_body: "Mining, energy, and industries where every error is costly."
+      }
+    };
+
+    const setLang = (lang) => {
+      const dict = i18n[lang] || i18n.es;
+      document.documentElement.lang = lang;
+
+      // data-i18n text content / innerHTML
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+
+      // data-i18n-attr e.g. "href:cta_primary_href,alt:brand_alt"
+      document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+        const map = el.getAttribute("data-i18n-attr").split(",").map(s => s.trim());
+        map.forEach(pair => {
+          const [attr, key] = pair.split(":");
+          if (dict[key] !== undefined) el.setAttribute(attr, dict[key]);
+        });
+      });
+
+      // toggle active state
+      document.getElementById("btn-es").classList.toggle("active", lang === "es");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+
+      // persist
+      try { localStorage.setItem("po_lang", lang); } catch {}
+    };
+
+    // init
+    const saved = (()=>{
+      try { return localStorage.getItem("po_lang"); } catch { return null; }
+    })();
+    setLang(saved || "es");
+
+    document.getElementById("btn-es").addEventListener("click", () => setLang("es"));
+    document.getElementById("btn-en").addEventListener("click", () => setLang("en"));
+
+    // year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
